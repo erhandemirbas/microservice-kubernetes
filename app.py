@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+!/usr/local/bin/python3
 import logging
 from flask import Flask, request, jsonify
 from flask.logging import create_logger
@@ -26,7 +26,6 @@ def home():
 @app.route("/predict", methods=['POST'])
 def predict():
     """Performs an sklearn prediction
-        
         input looks like:
         {
         "CHAS":{
