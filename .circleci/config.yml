@@ -9,7 +9,7 @@ jobs:
       # Use the same Docker base as the project
       - image: python:3.7.3-stretch
 
-    working_directory: ~/repo
+    working_directory: ~/microservice-kubernetes
 
     steps:
       - checkout
@@ -35,10 +35,9 @@ jobs:
             - ./venv
           key: v1-dependencies-{{ checksum "requirements.txt" }}
 
-      # run lint! venv creation added by me
+      # run lint!
       - run:
           name: run lint
           command: |
-            python3 -m venv venv
             . venv/bin/activate 
             make lint 
