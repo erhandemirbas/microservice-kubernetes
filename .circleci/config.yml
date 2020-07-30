@@ -35,9 +35,10 @@ jobs:
             - ./venv
           key: v1-dependencies-{{ checksum "requirements.txt" }}
 
-      # run lint!
+      # run lint! venv creation added by me
       - run:
           name: run lint
           command: |
+            python3 -m venv venv
             . venv/bin/activate 
             make lint 
