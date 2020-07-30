@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
+import logging
 from flask import Flask, request, jsonify
 from flask.logging import create_logger
-import logging
 
 import pandas as pd
 from sklearn.externals import joblib
@@ -13,7 +13,6 @@ LOG.setLevel(logging.INFO)
 
 def scale(payload):
     """Scales Payload"""
-    
     LOG.info(f"Scaling Payload: \n{payload}")
     scaler = StandardScaler().fit(payload.astype(float))
     scaled_adhoc_predict = scaler.transform(payload.astype(float))
