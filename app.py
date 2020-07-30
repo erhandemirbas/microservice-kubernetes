@@ -47,12 +47,9 @@ def predict():
         "LSTAT":{
         "0":4.98
         }
-        
         result looks like:
         { "prediction": [ <val> ] }
-        
         """
-    
     # Logging the input payload
     json_payload = request.json
     LOG.info(f"JSON payload: \n{json_payload}")
